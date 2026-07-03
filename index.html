@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0c1016" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="description" content="bets·plan — analista conservador. Filtro 0–10, odd real, disciplina." />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none';" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="styles.css?v=20" />
+  <title>bets·plan</title>
+</head>
+<body>
+  <div id="login-screen" class="login-screen">
+    <div class="card">
+      <div class="brand-mark" aria-hidden="true">◈</div>
+      <div class="brand-text">
+        <div class="name">bets<span>·</span>plan</div>
+        <div class="tagline">analista conservador</div>
+        <div class="mantra">odd real · disciplina · filtro 0–10</div>
+      </div>
+      <form id="login-form" class="login-form" autocomplete="off">
+        <label class="reason" id="pass-label" for="passphrase-input">Senha de acesso</label>
+        <input
+          type="password"
+          id="passphrase-input"
+          class="passphrase-input"
+          name="passphrase"
+          minlength="12"
+          autocomplete="current-password"
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false"
+          data-lpignore="true"
+          data-1p-ignore="true"
+          required
+        />
+        <button type="submit" class="primary login-submit" id="btn-login">Entrar</button>
+        <p class="reason login-error" id="login-error"></p>
+      </form>
+    </div>
+  </div>
+
+  <div id="app-content" class="is-hidden">
+    <header class="site-header">
+      <div class="brand-lockup">
+        <div class="brand-mark" aria-hidden="true">◈</div>
+        <div class="brand-text">
+          <div class="name">bets<span>·</span>plan</div>
+          <div class="tagline">analista conservador</div>
+          <div class="mantra">odd real · disciplina · filtro 0–10</div>
+        </div>
+      </div>
+    </header>
+    <div id="toolbar">
+      <button type="button" class="primary" id="btn-refresh">Atualizar</button>
+      <button type="button" class="ghost" id="btn-compact">Só veredito</button>
+      <button type="button" class="ghost" id="btn-logout">Sair</button>
+      <span id="update-badge" hidden>NOVA</span>
+      <span id="status">carregando…</span>
+    </div>
+    <section id="conferir-panel" class="card conferir-panel" hidden>
+      <h2>Conferir odd</h2>
+      <div class="conferir-grid">
+        <label>Rank <input type="number" id="cf-rank" min="1" max="10" value="1" /></label>
+        <label>Casa
+          <select id="cf-casa"><option>Betano</option><option>Superbet</option></select>
+        </label>
+        <label>Odd cupom <input type="number" id="cf-odd" step="0.01" min="1" placeholder="1.65" /></label>
+        <button type="button" class="primary" id="btn-conferir">Validar cupom</button>
+      </div>
+      <p id="cf-result" class="meta"></p>
+    </section>
+    <main id="app"></main>
+  </div>
+
+  <div id="toast">◈ Nova análise disponível</div>
+  <script src="config.js"></script>
+  <script src="auth.js?v=20"></script>
+  <script src="app.js?v=20"></script>
+</body>
+</html>
